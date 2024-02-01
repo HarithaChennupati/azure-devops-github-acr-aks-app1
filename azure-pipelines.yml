@@ -32,13 +32,11 @@ stages:
       vmImage: $(vmImageName)
     steps:
     - task: Docker@2
-      displayName: Build and push an image to container registry
       inputs:
-        command: buildAndPush
-        repository: $(imageRepository)
-        dockerfile: $(dockerfilePath)
-        containerRegistry: $(dockerRegistryServiceConnection)
-
+        containerRegistry: 'ACRforAKSharithademocluster1'
+        repository: 'app1nginxaks'
+        command: 'buildAndPush'
+        Dockerfile: '**/Dockerfile'
     - upload: manifests
       artifact: manifests
 
