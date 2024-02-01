@@ -73,5 +73,5 @@ stages:
               imagePullSecrets: |
                 $(imagePullSecret)
               containers: |
-                $(containerRegistry)/$(imageRepository):$(tags)
+                $(containerRegistry)/$(imageRepository)
 
